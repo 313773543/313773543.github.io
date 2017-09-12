@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-11T09:09:30.912Z</updated>
+  <updated>2017-09-12T03:33:04.171Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How to update ruby from version 2.0.0 to 2.4.0 on Mac?</title>
+    <link href="http://yoursite.com/2017/09/12/How-to-update-ruby-from-version-2-0-0-to-2-4-0-on-Mac/"/>
+    <id>http://yoursite.com/2017/09/12/How-to-update-ruby-from-version-2-0-0-to-2-4-0-on-Mac/</id>
+    <published>2017-09-12T02:41:46.000Z</published>
+    <updated>2017-09-12T03:33:04.171Z</updated>
+    
+    <content type="html"><![CDATA[<p>##如何将macOS上Ruby从2.0.0升级到2.4.0</p><p>###第一步: 安装<a href="https://rvm.io/" target="_blank" rel="external">RVM</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\curl -sSL https://get.rvm.io | bash -s stable</div></pre></td></tr></table></figure></p><p>当你安装完成（如果遇到问题请查看rvm链接），需要重启终端(terminal)方可使用rvm．可以通过如下命令查询目前rvm包含不同版本的ruby．<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rvm list known</div></pre></td></tr></table></figure></p><p>###第二步：使用<a href="https://rvm.io/" target="_blank" rel="external">RVM</a>安装Ruby<br>使用如下命令进行新版本Ruby安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rvm install ruby-2.4.1</div></pre></td></tr></table></figure></p><p>使用如下检查Ruby版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby -v</div></pre></td></tr></table></figure></p><p>目前Ruby版本应该为2.0.0</p><p>###第三步：通过RVM切换Ruby版本<br>通过如下命令切换Ruby版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rvm use ruby-2.4.1</div></pre></td></tr></table></figure></p><p>如果想将其设置为默认(default)版本的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rvm use ruby-2.4.1 --default</div></pre></td></tr></table></figure></p><p>至此mac上的Ruby版本修改完毕．</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;##如何将macOS上Ruby从2.0.0升级到2.4.0&lt;/p&gt;
+&lt;p&gt;###第一步: 安装&lt;a href=&quot;https://rvm.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RVM&lt;/a&gt;&lt;br&gt;&lt;figure class=&quot;highlig
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
