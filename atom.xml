@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://www.meihouwang.co/"/>
+  <link href="http://blog.meihouwang.co/"/>
   <updated>2017-09-13T10:12:05.171Z</updated>
-  <id>http://www.meihouwang.co/</id>
+  <id>http://blog.meihouwang.co/</id>
   
   <author>
     <name>Robin</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://www.meihouwang.co/2017/09/13/hello-world/"/>
-    <id>http://www.meihouwang.co/2017/09/13/hello-world/</id>
+    <link href="http://blog.meihouwang.co/2017/09/13/hello-world/"/>
+    <id>http://blog.meihouwang.co/2017/09/13/hello-world/</id>
     <published>2017-09-13T10:12:05.171Z</published>
     <updated>2017-09-13T10:12:05.171Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>How to squash multiple commits into one?</title>
-    <link href="http://www.meihouwang.co/2017/09/13/How-to-squash-multiple-commits-into-one/"/>
-    <id>http://www.meihouwang.co/2017/09/13/How-to-squash-multiple-commits-into-one/</id>
+    <link href="http://blog.meihouwang.co/2017/09/13/How-to-squash-multiple-commits-into-one/"/>
+    <id>http://blog.meihouwang.co/2017/09/13/How-to-squash-multiple-commits-into-one/</id>
     <published>2017-09-13T09:26:32.000Z</published>
     <updated>2017-09-13T10:15:34.772Z</updated>
     
@@ -55,23 +55,23 @@
     
     </summary>
     
-      <category term="dailylearning" scheme="http://www.meihouwang.co/categories/dailylearning/"/>
+      <category term="dailylearning" scheme="http://blog.meihouwang.co/categories/dailylearning/"/>
     
     
-      <category term="tech" scheme="http://www.meihouwang.co/tags/tech/"/>
+      <category term="git" scheme="http://blog.meihouwang.co/tags/git/"/>
     
-      <category term="git" scheme="http://www.meihouwang.co/tags/git/"/>
+      <category term="linux" scheme="http://blog.meihouwang.co/tags/linux/"/>
     
-      <category term="linux" scheme="http://www.meihouwang.co/tags/linux/"/>
+      <category term="tech" scheme="http://blog.meihouwang.co/tags/tech/"/>
     
-      <category term="squash" scheme="http://www.meihouwang.co/tags/squash/"/>
+      <category term="squash" scheme="http://blog.meihouwang.co/tags/squash/"/>
     
   </entry>
   
   <entry>
     <title>How to update ruby from version 2.0.0 to 2.4.0 on Mac?</title>
-    <link href="http://www.meihouwang.co/2017/09/12/How-to-update-ruby-from-version-2-0-0-to-2-4-0-on-Mac/"/>
-    <id>http://www.meihouwang.co/2017/09/12/How-to-update-ruby-from-version-2-0-0-to-2-4-0-on-Mac/</id>
+    <link href="http://blog.meihouwang.co/2017/09/12/How-to-update-ruby-from-version-2-0-0-to-2-4-0-on-Mac/"/>
+    <id>http://blog.meihouwang.co/2017/09/12/How-to-update-ruby-from-version-2-0-0-to-2-4-0-on-Mac/</id>
     <published>2017-09-12T02:41:46.000Z</published>
     <updated>2017-09-13T10:12:05.171Z</updated>
     
@@ -86,12 +86,12 @@
     
     </summary>
     
-      <category term="dailylearning" scheme="http://www.meihouwang.co/categories/dailylearning/"/>
+      <category term="dailylearning" scheme="http://blog.meihouwang.co/categories/dailylearning/"/>
     
     
-      <category term="ruby" scheme="http://www.meihouwang.co/tags/ruby/"/>
+      <category term="tech" scheme="http://blog.meihouwang.co/tags/tech/"/>
     
-      <category term="tech" scheme="http://www.meihouwang.co/tags/tech/"/>
+      <category term="ruby" scheme="http://blog.meihouwang.co/tags/ruby/"/>
     
   </entry>
   

@@ -4,7 +4,7 @@
     
     <entry>
         <title><![CDATA[Hello World]]></title>
-        <url>http://www.meihouwang.co/2017/09/13/hello-world/</url>
+        <url>http://blog.meihouwang.co/2017/09/13/hello-world/</url>
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
@@ -22,7 +22,7 @@
     
     <entry>
         <title><![CDATA[How to squash multiple commits into one?]]></title>
-        <url>http://www.meihouwang.co/2017/09/13/How-to-squash-multiple-commits-into-one/</url>
+        <url>http://blog.meihouwang.co/2017/09/13/How-to-squash-multiple-commits-into-one/</url>
         <content type="html"><![CDATA[<h3 id="如何合并多个commit到一个commit呢？参考"><a href="#如何合并多个commit到一个commit呢？参考" class="headerlink" title="如何合并多个commit到一个commit呢？参考"></a>如何合并多个commit到一个commit呢？<a href="http://www.jianshu.com/p/964de879904a" target="_blank" rel="external">参考</a></h3><h4 id="第一步-找到需要合并的commit前面的一个"><a href="#第一步-找到需要合并的commit前面的一个" class="headerlink" title="第一步:  找到需要合并的commit前面的一个"></a>第一步:  找到需要合并的commit前面的一个</h4><p>  使用命令git log找到需要合并的所有commit前面的那个commit，记下前六个字符．如下图想合并前两个commit,则查找得到2629fb.</p>
 <p><img src="/img/gitLog003.png" alt="A snapshot of it"></p>
 <h4 id="第二步：编辑之前的commit"><a href="#第二步：编辑之前的commit" class="headerlink" title="第二步：编辑之前的commit"></a>第二步：编辑之前的commit</h4><p>  使用如下命令编辑之前的commit</p>
@@ -44,11 +44,11 @@
         
         <tags>
             
-            <tag> tech </tag>
-            
             <tag> git </tag>
             
             <tag> linux </tag>
+            
+            <tag> tech </tag>
             
             <tag> squash </tag>
             
@@ -58,7 +58,7 @@
     
     <entry>
         <title><![CDATA[How to update ruby from version 2.0.0 to 2.4.0 on Mac?]]></title>
-        <url>http://www.meihouwang.co/2017/09/12/How-to-update-ruby-from-version-2-0-0-to-2-4-0-on-Mac/</url>
+        <url>http://blog.meihouwang.co/2017/09/12/How-to-update-ruby-from-version-2-0-0-to-2-4-0-on-Mac/</url>
         <content type="html"><![CDATA[<h2 id="如何将macOS上Ruby从2-0-0升级到2-4-0"><a href="#如何将macOS上Ruby从2-0-0升级到2-4-0" class="headerlink" title="如何将macOS上Ruby从2.0.0升级到2.4.0"></a>如何将macOS上Ruby从2.0.0升级到2.4.0</h2><h3 id="第一步-安装RVM"><a href="#第一步-安装RVM" class="headerlink" title="第一步: 安装RVM"></a>第一步: 安装<a href="https://rvm.io/" target="_blank" rel="external">RVM</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\curl -sSL https://get.rvm.io | bash -s stable</div></pre></td></tr></table></figure>
 <p>当你安装完成（如果遇到问题请查看rvm链接），需要重启终端(terminal)方可使用rvm．可以通过如下命令查询目前rvm包含不同版本的ruby．<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rvm list known</div></pre></td></tr></table></figure></p>
 <h3 id="第二步：使用RVM安装Ruby"><a href="#第二步：使用RVM安装Ruby" class="headerlink" title="第二步：使用RVM安装Ruby"></a>第二步：使用<a href="https://rvm.io/" target="_blank" rel="external">RVM</a>安装Ruby</h3><p>使用如下命令进行新版本Ruby安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rvm install ruby-2.4.1</div></pre></td></tr></table></figure></p>
@@ -78,9 +78,9 @@
         
         <tags>
             
-            <tag> ruby </tag>
-            
             <tag> tech </tag>
+            
+            <tag> ruby </tag>
             
         </tags>
         
