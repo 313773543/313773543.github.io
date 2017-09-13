@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://blog.meihouwang.co/"/>
-  <updated>2017-09-13T00:47:51.841Z</updated>
-  <id>http://blog.meihouwang.co/</id>
+  <link href="http://www.meihouwang.co/"/>
+  <updated>2017-09-13T10:12:05.171Z</updated>
+  <id>http://www.meihouwang.co/</id>
   
   <author>
     <name>Robin</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://blog.meihouwang.co/2017/09/13/hello-world/"/>
-    <id>http://blog.meihouwang.co/2017/09/13/hello-world/</id>
-    <published>2017-09-13T00:47:51.841Z</published>
-    <updated>2017-09-13T00:47:51.841Z</updated>
+    <link href="http://www.meihouwang.co/2017/09/13/hello-world/"/>
+    <id>http://www.meihouwang.co/2017/09/13/hello-world/</id>
+    <published>2017-09-13T10:12:05.171Z</published>
+    <updated>2017-09-13T10:12:05.171Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure><p><img src="/img/dog1.jpg" alt="A dog"></p><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>]]></content>
     
@@ -38,11 +38,42 @@
   </entry>
   
   <entry>
+    <title>How to squash multiple commits into one?</title>
+    <link href="http://www.meihouwang.co/2017/09/13/How-to-squash-multiple-commits-into-one/"/>
+    <id>http://www.meihouwang.co/2017/09/13/How-to-squash-multiple-commits-into-one/</id>
+    <published>2017-09-13T09:26:32.000Z</published>
+    <updated>2017-09-13T10:15:34.772Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="如何合并多个commit到一个commit呢？参考"><a href="#如何合并多个commit到一个commit呢？参考" class="headerlink" title="如何合并多个commit到一个commit呢？参考"></a>如何合并多个commit到一个commit呢？<a href="http://www.jianshu.com/p/964de879904a" target="_blank" rel="external">参考</a></h3><h4 id="第一步-找到需要合并的commit前面的一个"><a href="#第一步-找到需要合并的commit前面的一个" class="headerlink" title="第一步:  找到需要合并的commit前面的一个"></a>第一步:  找到需要合并的commit前面的一个</h4><p>  使用命令git log找到需要合并的所有commit前面的那个commit，记下前六个字符．如下图想合并前两个commit,则查找得到2629fb.</p><p><img src="/img/gitLog003.png" alt="A snapshot of it"></p><h4 id="第二步：编辑之前的commit"><a href="#第二步：编辑之前的commit" class="headerlink" title="第二步：编辑之前的commit"></a>第二步：编辑之前的commit</h4><p>  使用如下命令编辑之前的commit</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git rebase -i 2629fb</div></pre></td></tr></table></figure><p>结果如下图所示．</p><p><img src="/img/gitRebase003.png" alt="A snapshot of it"></p><h4 id="第三步：编辑git-rebase打开的文件"><a href="#第三步：编辑git-rebase打开的文件" class="headerlink" title="第三步：编辑git rebase打开的文件"></a>第三步：编辑git rebase打开的文件</h4><p>  修改上一步打开的文件编辑页面，将第一个pick行后面行的pick改为squash．pick意味着使用此commit,squash意味着将从commit与上面的commit合并．如下图所示（超过两行的同理）．</p><p><img src="/img/gitRebaseModify003.png" alt="A snapshot of it"></p><h4 id="第四步：修改commit的评论信息"><a href="#第四步：修改commit的评论信息" class="headerlink" title="第四步：修改commit的评论信息"></a>第四步：修改commit的评论信息</h4><p>  保存上一步的编辑文件页面，就会打开一个重新编辑commit评论信息的编辑文件页面．修改评论信息，保存即可应用此次修改．</p><p><img src="/img/gitRebaseModifyComment003.png" alt="A snapshot of it"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;如何合并多个commit到一个commit呢？参考&quot;&gt;&lt;a href=&quot;#如何合并多个commit到一个commit呢？参考&quot; class=&quot;headerlink&quot; title=&quot;如何合并多个commit到一个commit呢？参考&quot;&gt;&lt;/a&gt;如何合并多个commi
+      
+    
+    </summary>
+    
+      <category term="dailylearning" scheme="http://www.meihouwang.co/categories/dailylearning/"/>
+    
+    
+      <category term="tech" scheme="http://www.meihouwang.co/tags/tech/"/>
+    
+      <category term="git" scheme="http://www.meihouwang.co/tags/git/"/>
+    
+      <category term="linux" scheme="http://www.meihouwang.co/tags/linux/"/>
+    
+      <category term="squash" scheme="http://www.meihouwang.co/tags/squash/"/>
+    
+  </entry>
+  
+  <entry>
     <title>How to update ruby from version 2.0.0 to 2.4.0 on Mac?</title>
-    <link href="http://blog.meihouwang.co/2017/09/12/How-to-update-ruby-from-version-2-0-0-to-2-4-0-on-Mac/"/>
-    <id>http://blog.meihouwang.co/2017/09/12/How-to-update-ruby-from-version-2-0-0-to-2-4-0-on-Mac/</id>
+    <link href="http://www.meihouwang.co/2017/09/12/How-to-update-ruby-from-version-2-0-0-to-2-4-0-on-Mac/"/>
+    <id>http://www.meihouwang.co/2017/09/12/How-to-update-ruby-from-version-2-0-0-to-2-4-0-on-Mac/</id>
     <published>2017-09-12T02:41:46.000Z</published>
-    <updated>2017-09-13T06:36:48.577Z</updated>
+    <updated>2017-09-13T10:12:05.171Z</updated>
     
     <content type="html"><![CDATA[<h2 id="如何将macOS上Ruby从2-0-0升级到2-4-0"><a href="#如何将macOS上Ruby从2-0-0升级到2-4-0" class="headerlink" title="如何将macOS上Ruby从2.0.0升级到2.4.0"></a>如何将macOS上Ruby从2.0.0升级到2.4.0</h2><h3 id="第一步-安装RVM"><a href="#第一步-安装RVM" class="headerlink" title="第一步: 安装RVM"></a>第一步: 安装<a href="https://rvm.io/" target="_blank" rel="external">RVM</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\curl -sSL https://get.rvm.io | bash -s stable</div></pre></td></tr></table></figure><p>当你安装完成（如果遇到问题请查看rvm链接），需要重启终端(terminal)方可使用rvm．可以通过如下命令查询目前rvm包含不同版本的ruby．<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rvm list known</div></pre></td></tr></table></figure></p><h3 id="第二步：使用RVM安装Ruby"><a href="#第二步：使用RVM安装Ruby" class="headerlink" title="第二步：使用RVM安装Ruby"></a>第二步：使用<a href="https://rvm.io/" target="_blank" rel="external">RVM</a>安装Ruby</h3><p>使用如下命令进行新版本Ruby安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rvm install ruby-2.4.1</div></pre></td></tr></table></figure></p><p>使用如下检查Ruby版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby -v</div></pre></td></tr></table></figure></p><p>目前Ruby版本应该为2.0.0</p><h3 id="第三步：通过RVM切换Ruby版本"><a href="#第三步：通过RVM切换Ruby版本" class="headerlink" title="第三步：通过RVM切换Ruby版本"></a>第三步：通过RVM切换Ruby版本</h3><p>通过如下命令切换Ruby版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rvm use ruby-2.4.1</div></pre></td></tr></table></figure></p><p>如果想将其设置为默认(default)版本的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rvm use ruby-2.4.1 --default</div></pre></td></tr></table></figure></p><p>至此mac上的Ruby版本修改完毕．</p>]]></content>
     
@@ -55,12 +86,12 @@
     
     </summary>
     
-      <category term="dailylearning" scheme="http://blog.meihouwang.co/categories/dailylearning/"/>
+      <category term="dailylearning" scheme="http://www.meihouwang.co/categories/dailylearning/"/>
     
     
-      <category term="ruby" scheme="http://blog.meihouwang.co/tags/ruby/"/>
+      <category term="ruby" scheme="http://www.meihouwang.co/tags/ruby/"/>
     
-      <category term="tech" scheme="http://blog.meihouwang.co/tags/tech/"/>
+      <category term="tech" scheme="http://www.meihouwang.co/tags/tech/"/>
     
   </entry>
   

@@ -20,7 +20,7 @@
 <meta name="verify" content=all />
     <!--Title-->
 
-<title>Tag: tech | 大圣取经</title>
+<title>How to squash multiple commits into one? | 大圣取经</title>
 
 <link rel="alternate" href="/atom.xml" title="大圣取经" type="application/atom+xml">
 
@@ -29,9 +29,10 @@
 
     
 <link rel="stylesheet" href="/css/base.css">
-<link rel="stylesheet" href="/css/pages/archive.css">
+<link rel="stylesheet" href="/css/pages/post.css">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
+<link rel="stylesheet" href="/css/pages/comments.css">
 
     <!--script-->
 
@@ -53,6 +54,22 @@
 
 <!--<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>-->
 
+
+<script src="/js/thirdParty/gitment.browser.min.js"></script>
+<script>
+  var labels = "blog,gitment";
+  labels = labels.split(",");
+  var gitment = new Gitment({
+    id: window.location.pathname,
+    owner: "robinwang7",
+    repo: "robinwang7.github.io",
+    oauth: {
+      client_id: "408ccc510afb227865d9",
+      client_secret: "b1643c4025ba43f282bb6e9ca8064b6310a63a23"
+    },
+    perPage: "20"
+  });
+</script>
 
 
     
@@ -157,14 +174,15 @@
 
 
         <div id="main">
-    <div id="post-list">
-        <ul class="archives-post-list">
-            
-            <li class="post-items" _href="/2017/09/13/How-to-squash-multiple-commits-into-one/">
+    <article id="post">
+        <div id="post-header">
+
+            <h1 id="How to squash multiple commits into one?">
                 
-                <p class="info">tech</p>
-                <h2 class="post-item-title">How to squash multiple commits into one?</h2>
-                <div class="article-meta">
+                How to squash multiple commits into one?
+                
+            </h1>
+            <div class="article-meta">
     
     
     <span class="categories-meta fa-wrap">
@@ -172,6 +190,15 @@
         <span>dailylearning</span>
     </span>
     
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            tech
+            
+        </span>
+    </span>
     
     
     <span class="fa-wrap">
@@ -189,44 +216,103 @@
     
 </div>
 
-            </li>
             
-            <li class="post-items" _href="/2017/09/12/How-to-update-ruby-from-version-2-0-0-to-2-4-0-on-Mac/">
+            
+        </div>
+        
+        <div id="post-body">
+            <h3 id="如何合并多个commit到一个commit呢？参考"><a href="#如何合并多个commit到一个commit呢？参考" class="headerlink" title="如何合并多个commit到一个commit呢？参考"></a>如何合并多个commit到一个commit呢？<a href="http://www.jianshu.com/p/964de879904a" target="_blank" rel="external">参考</a></h3><h4 id="第一步-找到需要合并的commit前面的一个"><a href="#第一步-找到需要合并的commit前面的一个" class="headerlink" title="第一步:  找到需要合并的commit前面的一个"></a>第一步:  找到需要合并的commit前面的一个</h4><p>  使用命令git log找到需要合并的所有commit前面的那个commit，记下前六个字符．如下图想合并前两个commit,则查找得到2629fb.</p>
+<p><img src="/img/gitLog003.png" alt="A snapshot of it"></p>
+<h4 id="第二步：编辑之前的commit"><a href="#第二步：编辑之前的commit" class="headerlink" title="第二步：编辑之前的commit"></a>第二步：编辑之前的commit</h4><p>  使用如下命令编辑之前的commit</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git rebase -i 2629fb</div></pre></td></tr></table></figure>
+<p>结果如下图所示．</p>
+<p><img src="/img/gitRebase003.png" alt="A snapshot of it"></p>
+<h4 id="第三步：编辑git-rebase打开的文件"><a href="#第三步：编辑git-rebase打开的文件" class="headerlink" title="第三步：编辑git rebase打开的文件"></a>第三步：编辑git rebase打开的文件</h4><p>  修改上一步打开的文件编辑页面，将第一个pick行后面行的pick改为squash．pick意味着使用此commit,squash意味着将从commit与上面的commit合并．如下图所示（超过两行的同理）．</p>
+<p><img src="/img/gitRebaseModify003.png" alt="A snapshot of it"></p>
+<h4 id="第四步：修改commit的评论信息"><a href="#第四步：修改commit的评论信息" class="headerlink" title="第四步：修改commit的评论信息"></a>第四步：修改commit的评论信息</h4><p>  保存上一步的编辑文件页面，就会打开一个重新编辑commit评论信息的编辑文件页面．修改评论信息，保存即可应用此次修改．</p>
+<p><img src="/img/gitRebaseModifyComment003.png" alt="A snapshot of it"></p>
+
+        </div>
+        <div id="post-footer">
+            <div class="avatar" >
+                <img src="/img/robin.jpg" alt="avatar"/>
                 
-                <p class="info">tech</p>
-                <h2 class="post-item-title">How to update ruby from version 2.0.0 to 2.4.0 on Mac?</h2>
-                <div class="article-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-        <span>dailylearning</span>
-    </span>
-    
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta ">2017/09/12</span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-            <i class="fa fa-thermometer-three-quarters"></i>
-        <span class="hits hits-meta " data-leadcloud-title="How to update ruby from version 2.0.0 to 2.4.0 on Mac?"
-              data-leadcloud-url="/2017/09/12/How-to-update-ruby-from-version-2-0-0-to-2-4-0-on-Mac/"><i class="fa fa-spinner fa-spin"></i></span>
-    </span>
-    
-    
-</div>
-
-            </li>
-            
-        </ul>
+                <a href="javascript:void(0)" class="high-song">high起来 &#128541;</a>
+                
+                
+                <a href="javascript:void(0)" class="donate fa">赠我一杯 &#128536;</a>
+                
+            </div>
+            <ul class="author-profile-section">
+                <li>
+                  
+                  Author:
+                  
+                    
+                    <a href="/about.html">Robin</a>
+                </li>
+                
+                <li>Published Date: <span>2017-09-13  05:26:32</span></li>
+                
+                <li>Updated Date: <span>2017-09-13  06:15:34</span></li>
+                
+                <li class="post-category">
+                    Categories:
+                    
+                    <a href="/categories/dailylearning/">dailylearning</a>
+                    
+                </li>
+                <li class="post-tags">
+                    Tags:
+                    
+                    <a href="/tags/tech/">tech</a>
+                    
+                    <a href="/tags/git/">git</a>
+                    
+                    <a href="/tags/linux/">linux</a>
+                    
+                    <a href="/tags/squash/">squash</a>
+                    
+                </li>
+                
+                <li> License: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">
+知识共享署名-非商业性使用-禁止演绎 3.0 未本地化版本许可协议（CC BY-NC-ND 3.0）
+</a></li>
+                
+            </ul>
+            <div id="donate-wrap">
+                
+                
+                
+                <img src="/img/alipay.jpg" alt="支付宝付款" class="donate-img">
+                
+                <img src="/img/wechat.jpg" alt="微信付款" class="donate-img">
+                
+                
+            </div>
+        </div>
+    </article>
+    <div class="article-nav">
+        
+        <a href="/2017/09/13/hello-world/" class="pre-post fa fa-caret-left">Hello World</a>
+        
+        
+        <a href="/2017/09/12/How-to-update-ruby-from-version-2-0-0-to-2-4-0-on-Mac/" class="next-post fa">How to update ruby from version 2.0.0 to 2.4.0 on Mac?</a>
+        
     </div>
+    
+    <div id="comments">
+        
+
+<script>
+  gitment.render(document.getElementById("comments"));
+</script>
+
+
+
+    </div>
+    
 </div>
-
-
 
 
     </div>
@@ -263,8 +349,14 @@
     <li class="totop-btn fa fa-angle-up"></li>
     <li class="exchange-btn fa fa-exchange"></li>
   
+    <li class="toc-btn fa fa-list-ul"></li>
+    
     
 
+    
+    <li class="comment-btn fa fa-comments-o">
+        <a href="#comments" title="comments"></a>
+    </li>
     
 </ul>
 <p id="process"></p>
@@ -282,6 +374,8 @@
         </div>
     </div>
 </div>
+
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何合并多个commit到一个commit呢？参考"><span class="toc-number">1.</span> <span class="toc-text">如何合并多个commit到一个commit呢？参考</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#第一步-找到需要合并的commit前面的一个"><span class="toc-number">1.1.</span> <span class="toc-text">第一步:  找到需要合并的commit前面的一个</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第二步：编辑之前的commit"><span class="toc-number">1.2.</span> <span class="toc-text">第二步：编辑之前的commit</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第三步：编辑git-rebase打开的文件"><span class="toc-number">1.3.</span> <span class="toc-text">第三步：编辑git rebase打开的文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第四步：修改commit的评论信息"><span class="toc-number">1.4.</span> <span class="toc-text">第四步：修改commit的评论信息</span></a></li></ol></li></ol>
 
 
     <script src="/js/highsong.js"></script>
