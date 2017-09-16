@@ -30,6 +30,6 @@
     "lodash.pick": "^4.4.0",
     "moment": "^2.18.1",
     "utils-merge": "^1.0.0",
-    "hexo-tag-cloud": "1.0.*" 
+    "hexo-tag-cloud": "2.0.*" 
   }
 }

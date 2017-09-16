@@ -46,8 +46,8 @@ arch_config:
 ### tagcloud config
 ### 彩色标签云设置{@tagcloud_config:/*https://hexo.io/zh-cn/docs/helpers.html#tagcloud*/}
 tagcloud_config:
- min_font: 0.14
- max_font: 0.2
+ min_font: 0.24
+ max_font: 0.5
  unit: rem
  amount: 100
  color: true
