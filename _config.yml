@@ -7,12 +7,12 @@ title: 大圣取经
 subtitle:
 description:
 author: Robin
-language:
+language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.meihouwang.co
+url: http://www.meihouwang.co
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -92,3 +92,10 @@ deploy:
 
 stylus:
   compress: true
+
+# hexo-tag-cloud
+tag_cloud:
+    textFont: Trebuchet MS, Helvetica
+    textColour: \#333
+    textHeight: 25
+    outlineColour: \#E2E1D1
