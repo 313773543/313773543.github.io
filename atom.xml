@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://honeyyouyou.com/"/>
-  <updated>2019-11-15T08:18:31.272Z</updated>
+  <updated>2019-11-15T08:22:47.858Z</updated>
   <id>http://honeyyouyou.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://honeyyouyou.com/2019/11/14/SparkAnalysis001/"/>
     <id>http://honeyyouyou.com/2019/11/14/SparkAnalysis001/</id>
     <published>2019-11-14T16:18:10.000Z</published>
-    <updated>2019-11-15T08:18:31.272Z</updated>
+    <updated>2019-11-15T08:22:47.858Z</updated>
     
     <content type="html"><![CDATA[<h1 id="SparkAnalysis001"><a href="#SparkAnalysis001" class="headerlink" title="SparkAnalysis001"></a>SparkAnalysis001</h1><h2 id="系统和软件的版本"><a href="#系统和软件的版本" class="headerlink" title="系统和软件的版本"></a>系统和软件的版本</h2><h3 id="Spark的版本"><a href="#Spark的版本" class="headerlink" title="Spark的版本"></a>Spark的版本</h3><h3 id="Java的版本"><a href="#Java的版本" class="headerlink" title="Java的版本"></a>Java的版本</h3><h3 id="Scala的版本"><a href="#Scala的版本" class="headerlink" title="Scala的版本"></a>Scala的版本</h3><h2 id="代码在Github的链接和分支"><a href="#代码在Github的链接和分支" class="headerlink" title="代码在Github的链接和分支"></a>代码在Github的链接和分支</h2><h3 id="代码链接"><a href="#代码链接" class="headerlink" title="代码链接"></a>代码链接</h3><h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><h2 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h2><h3 id="core"><a href="#core" class="headerlink" title="core"></a>core</h3><h3 id="common"><a href="#common" class="headerlink" title="common"></a>common</h3><h2 id="测试环境搭建"><a href="#测试环境搭建" class="headerlink" title="测试环境搭建"></a>测试环境搭建</h2><h3 id="编译方法"><a href="#编译方法" class="headerlink" title="编译方法"></a>编译方法</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
     
@@ -38,6 +38,8 @@
       <category term="learn" scheme="http://honeyyouyou.com/categories/learn/"/>
     
       <category term="code" scheme="http://honeyyouyou.com/categories/learn/code/"/>
+    
+      <category term="spark" scheme="http://honeyyouyou.com/categories/learn/code/spark/"/>
     
     
       <category term="学习" scheme="http://honeyyouyou.com/tags/%E5%AD%A6%E4%B9%A0/"/>
