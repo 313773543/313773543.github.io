@@ -20,7 +20,7 @@
 <meta name="verify" content=all />
     <!--Title-->
 
-<title>时光咖啡馆</title>
+<title>SparkAnalysis001 | 时光咖啡馆</title>
 
 <link rel="alternate" href="/atom.xml" title="时光咖啡馆" type="application/atom+xml">
 
@@ -29,9 +29,10 @@
 
     
 <link rel="stylesheet" href="/css/base.css">
-<link rel="stylesheet" href="/css/pages/article-exp.css">
+<link rel="stylesheet" href="/css/pages/post.css">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
     <!--script-->
 
@@ -55,6 +56,23 @@
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+<script>
+  var admin = "wbgentleman";
+  admin = admin.split(",");
+  var gitalk = new Gitalk({
+    clientID: "4542fd0f6a578529cf33",
+    clientSecret: "09b02505b521d351a26ec490d7e2b81218774abf",
+    repo: "honeyyouyoutalk",
+    owner: "wbgentleman",
+    admin: admin,
+    id: decodeURIComponent(location.pathname),
+    distractionFreeMode: false
+  })
+
+</script>
+
     
     
 </head>
@@ -74,7 +92,7 @@
 <![endif]-->
 
 <div id="wrap">
-    <header >
+    <header  style="position: absolute;" >
     <div id="site-meta">
         <a href="/" id="logo">
             <h1 class="title">时光咖啡馆</h1>
@@ -176,30 +194,15 @@
 </ul>
 
 
-        <ul id="main">
-    
+        <div id="main">
+    <article id="post">
+        <div id="post-header">
 
-    
-    
-    
-    
-    
-    
-    
-    <li  class="article-excerpt-wrap " _href = "/2019/11/15/SparkAnalysis001/">
-        <div class="article-img img-ajax" data-src= /img/default.png>
-           <div class="loading-img"><i class="fa fa-pulse fa-spinner"></i></div>
-        </div>
-        <div class="article-excerpt">
-            
-            <a class="article-title-link" href="/2019/11/15/SparkAnalysis001/">
-                <h2 class="article-title">SparkAnalysis001</h2>
-            </a>
-            
-            <p class="article-content">
-                title: Spark源码分析001date: 2019-11-02 08:22:18tags: [学习,代码,Spark]img: img/spark.pngcategories: [learn,code]
-SparkAnalysis001系统和软件的版本Spark的版本Java的版本Scala的版本代码在Github的链接和分支代码链接分支代码结构corecommon测试环境搭建编译方法
-            </p>
+            <h1 id="SparkAnalysis001">
+                
+                SparkAnalysis001
+                
+            </h1>
             <div class="article-meta">
     
     
@@ -232,73 +235,83 @@ SparkAnalysis001系统和软件的版本Spark的版本Java的版本Scala的版�
     </span>
     
     
-    <a href="/2019/11/15/SparkAnalysis001/" class="read-article">阅读全文</a>
+</div>
+
+            
+            
+        </div>
+        
+        <div id="post-body">
+            <p>title: Spark源码分析001<br>date: 2019-11-02 08:22:18<br>tags: [学习,代码,Spark]<br>img: img/spark.png<br>categories: [learn,code]</p>
+<h1 id="SparkAnalysis001"><a href="#SparkAnalysis001" class="headerlink" title="SparkAnalysis001"></a>SparkAnalysis001</h1><h2 id="系统和软件的版本"><a href="#系统和软件的版本" class="headerlink" title="系统和软件的版本"></a>系统和软件的版本</h2><h3 id="Spark的版本"><a href="#Spark的版本" class="headerlink" title="Spark的版本"></a>Spark的版本</h3><h3 id="Java的版本"><a href="#Java的版本" class="headerlink" title="Java的版本"></a>Java的版本</h3><h3 id="Scala的版本"><a href="#Scala的版本" class="headerlink" title="Scala的版本"></a>Scala的版本</h3><h2 id="代码在Github的链接和分支"><a href="#代码在Github的链接和分支" class="headerlink" title="代码在Github的链接和分支"></a>代码在Github的链接和分支</h2><h3 id="代码链接"><a href="#代码链接" class="headerlink" title="代码链接"></a>代码链接</h3><h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><h2 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h2><h3 id="core"><a href="#core" class="headerlink" title="core"></a>core</h3><h3 id="common"><a href="#common" class="headerlink" title="common"></a>common</h3><h2 id="测试环境搭建"><a href="#测试环境搭建" class="headerlink" title="测试环境搭建"></a>测试环境搭建</h2><h3 id="编译方法"><a href="#编译方法" class="headerlink" title="编译方法"></a>编译方法</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+        </div>
+        <div id="post-footer">
+            <div class="avatar" >
+                <img src="/img/meihouwang.jpeg" alt="avatar"/>
+                
+                <a href="javascript:void(0)" class="high-song">high起来 &#128541;</a>
+                
+                
+                <a href="javascript:void(0)" class="donate fa">赠我一杯 &#128536;</a>
+                
+            </div>
+            <ul class="author-profile-section">
+                <li>
+                  
+                  作者:
+                  
+                    
+                    <a href="/about.html">Robin</a>
+                </li>
+                
+                <li>发表日期: <span>2019-11-15  08:16:14</span></li>
+                
+                <li>最后编辑日期: <span>2019-11-15  08:14:46</span></li>
+                
+                <li class="post-category">
+                    文章分类:
+                    
+                </li>
+                <li class="post-tags">
+                    文章标签:
+                    
+                </li>
+                
+                <li> 版权声明: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">
+知识共享署名-非商业性使用-禁止演绎 3.0 未本地化版本许可协议（CC BY-NC-ND 3.0）
+</a></li>
+                
+            </ul>
+            <div id="donate-wrap">
+                
+                
+                
+                <img src="/img/alipay.jpg" alt="支付宝付款" class="donate-img">
+                
+                
+            </div>
+        </div>
+    </article>
+    <div class="article-nav">
+        
+        
+        <a href="/2019/11/01/how_to_learn_new_things/" class="next-post fa">如何迅速的学习新东西</a>
+        
+    </div>
+    
+    <div id="comments">
+        
+
+<script>
+  gitalk.render("comments");
+</script>
+
+
+
+    </div>
     
 </div>
 
-        </div>
-        
-    </li>
-    
-    
-    <li  class="article-excerpt-wrap " _href = "/2019/11/01/how_to_learn_new_things/">
-        <div class="article-img img-ajax" data-src= /img/learning.png>
-           <div class="loading-img"><i class="fa fa-pulse fa-spinner"></i></div>
-        </div>
-        <div class="article-excerpt">
-            
-            <a class="article-title-link" href="/2019/11/01/how_to_learn_new_things/">
-                <h2 class="article-title">如何迅速的学习新东西</h2>
-            </a>
-            
-            <p class="article-content">
-                如何迅速的学习新东西学习是什么这是一个很大的话题，也是一个很小的话题。大到可以说学习是人和其他动物的区别，小到每天看到一则新闻都是在学习。
-先从大处说地球形成于约45亿年前．大约42亿年前海洋形成．大约35亿年前海洋生命出现。最早的人属约出现在230万到240万年前的非洲大陆。早期智人大约在25万到40万年前演变出来。人类能站在生物链的顶端的原因是什么呢？为什么不是恐龙称霸地球？为什么不是蚂蚁？不是蟑螂？不是鲸鱼？人类个头并不大，跑的也不快？靠的是什么呢？答案是想象能力，也可以叫八卦能力。也是今天讨论的学习能力的一种。所以说往大了说学习是人类称霸地球的重要原因，你说这个话题大否？
-再从小处说你看了一则新闻，说哪里地震了，正好今天考试应用到自己的作文中。这是一种学习。早上上班的路上，突然想起昨天伙伴说附近有家早餐便宜又好吃，正好还没吃东西，就去他家。这是一种学习。学习是不是一个很小的话...
-            </p>
-            <div class="article-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-        <span>learn</span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-         <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-            学习
-            
-        </span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta ">2019/11/01</span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-            <i class="fa fa-thermometer-three-quarters"></i>
-        <span class="hits hits-meta " data-leadcloud-title="如何迅速的学习新东西"
-              data-leadcloud-url="/2019/11/01/how_to_learn_new_things/"><i class="fa fa-spinner fa-spin"></i></span>
-    </span>
-    
-    
-    <a href="/2019/11/01/how_to_learn_new_things/" class="read-article">阅读全文</a>
-    
-</div>
-
-        </div>
-        
-    </li>
-    
-    
-
-</ul>
 
     </div>
     <footer id="footer">
@@ -335,8 +348,14 @@ SparkAnalysis001系统和软件的版本Spark的版本Java的版本Scala的版�
     <li class="totop-btn fa fa-angle-up"></li>
     <li class="exchange-btn fa fa-exchange"></li>
   
+    <li class="toc-btn fa fa-list-ul"></li>
+    
     
 
+    
+    <li class="comment-btn fa fa-comments-o">
+        <a href="#comments" title="comments"></a>
+    </li>
     
 </ul>
 <p id="process"></p>
@@ -354,6 +373,8 @@ SparkAnalysis001系统和软件的版本Spark的版本Java的版本Scala的版�
         </div>
     </div>
 </div>
+
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SparkAnalysis001"><span class="toc-number">1.</span> <span class="toc-text">SparkAnalysis001</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#系统和软件的版本"><span class="toc-number">1.1.</span> <span class="toc-text">系统和软件的版本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spark的版本"><span class="toc-number">1.1.1.</span> <span class="toc-text">Spark的版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java的版本"><span class="toc-number">1.1.2.</span> <span class="toc-text">Java的版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scala的版本"><span class="toc-number">1.1.3.</span> <span class="toc-text">Scala的版本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码在Github的链接和分支"><span class="toc-number">1.2.</span> <span class="toc-text">代码在Github的链接和分支</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码链接"><span class="toc-number">1.2.1.</span> <span class="toc-text">代码链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支"><span class="toc-number">1.2.2.</span> <span class="toc-text">分支</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码结构"><span class="toc-number">1.3.</span> <span class="toc-text">代码结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#core"><span class="toc-number">1.3.1.</span> <span class="toc-text">core</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#common"><span class="toc-number">1.3.2.</span> <span class="toc-text">common</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试环境搭建"><span class="toc-number">1.4.</span> <span class="toc-text">测试环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#编译方法"><span class="toc-number">1.4.1.</span> <span class="toc-text">编译方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">1.4.2.</span> <span class="toc-text"></span></a></li></ol></li></ol></li></ol>
 
 
     <script src="/js/highsong.js"></script>
