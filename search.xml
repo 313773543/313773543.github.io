@@ -74,7 +74,8 @@
 
 </li>
 </ol>
-<h4 id="Partition-By"><a href="#Partition-By" class="headerlink" title="Partition By"></a>Partition By</h4><ul>
+<h4 id="Partition-By"><a href="#Partition-By" class="headerlink" title="Partition By"></a>Partition By</h4><p>参考另一篇文章&lt;Hive 窗口函数测试&gt;</p>
+<h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><ul>
 <li>参考：<a href="https://stackoverflow.com/questions/36447057/spark-group-multiple-rdd-items-by-key" target="_blank" rel="noopener">ReduceByKeyAndGroupByKey</a></li>
 <li>参考：<a href="https://gerardnico.com/db/spark/rdd/reduce" target="_blank" rel="noopener">ReduceAndReduceByKey</a></li>
 <li>参考：<a href="https://blog.csdn.net/u013514928/article/details/56680825" target="_blank" rel="noopener">Aggregate与AggregateByKey</a></li>
