@@ -1,11 +1,248 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search>
+<!doctype html>
+<html>
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable"  content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
     
     
-    <entry>
-        <title><![CDATA[spark_aggregate_operations]]></title>
-        <url>http://honeyyouyou.com/2019/11/19/spark_aggregate_operations/</url>
-        <content type="html"><![CDATA[<h1 id="Spark聚合操作-Spark-Aggregate-operations"><a href="#Spark聚合操作-Spark-Aggregate-operations" class="headerlink" title="Spark聚合操作 Spark Aggregate operations"></a>Spark聚合操作 Spark Aggregate operations</h1><h2 id="聚合操作简介"><a href="#聚合操作简介" class="headerlink" title="聚合操作简介"></a>聚合操作简介</h2><p>聚合操作，在sql，在编程概念中，或者说在人类思想概念中都是一个很重要的东西。<br>这个思想从哪里来的呢？应该是类推，演绎的继续。我们拆箱子，想看看每个箱子里面都多少个玩具，然后想知道每个玩具里面有多少个零件，想知道每个零件有几个齿轮轮毂，每个轮毂有多少道痕，每个痕里有几个细菌，每个细菌中有多少分子，到原子，到夸克就到了我们人类知道的最小的粒子了（不算时间，能量能虚幻之物）。然后往上，我们可以回滚。也就有了基本的聚合概念。每个屋里有多少箱子，每个城市有多少个屋，每个国家多少个城市，每个星球多少个国家，每个星系多少个星球，每个宇宙多少个星系。<br>还是回到讨论的聚合概念中来。有了刚才的类比，就比较好想聚合的概念了。在手中拥有的数据中，可以通过任意维度进行聚合，聚合后又可以查询原始数据。这就是作为的上钻和下钻的概念。<br>在sql中如何进行上下钻，切片等操作呢？</p>
+    <!--Simple SEO-->
+
+
+<meta name="robots" content=all />
+<meta name="google" content=all />
+<meta name="googlebot" content=all />
+<meta name="verify" content=all />
+    <!--Title-->
+
+<title>spark_aggregate_operations | 时光咖啡馆</title>
+
+<link rel="alternate" href="/atom.xml" title="时光咖啡馆" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/pages/post.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    <!--script-->
+
+
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.15.0/dist/av-min.js"></script>
+<script>
+  var appId = "PzYuF7A5UTlSlKpxASsstsxg-gzGzoHsz";
+  var appKey = "HGSltyQPNS2hTy7C3qnRSO8a";
+  var region = "";
+  var serverURLs = "https://pzyuf7a5.lc-cn-n1-shared.com";
+  AV.init({
+    appId: appId,
+    appKey: appKey,
+    region: region,
+    serverURLs: serverURLs
+  });
+</script>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+<script>
+  var admin = "wbgentleman";
+  admin = admin.split(",");
+  var gitalk = new Gitalk({
+    clientID: "4542fd0f6a578529cf33",
+    clientSecret: "09b02505b521d351a26ec490d7e2b81218774abf",
+    repo: "honeyyouyoutalk",
+    owner: "wbgentleman",
+    admin: admin,
+    id: decodeURIComponent(location.pathname),
+    distractionFreeMode: false
+  })
+
+</script>
+
+    
+    
+</head>
+
+<body id="normal">
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<style>
+    header{ top: 71px; position: absolute!important;}
+    #container{padding-top: 151px!important;}
+</style>
+<div style="position:fixed;z-index:9999;left:0;top:0;width:100%;height:70px;background-color:#e0e0e0;color:#396CA5;border-bottom:1px solid #cecece;text-align:center;line-height:70px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<div id="wrap">
+    <header  style="position: absolute;" >
+    <div id="site-meta">
+        <a href="/" id="logo">
+            <h1 class="title">时光咖啡馆</h1>
+        </a>
+        
+        <h2 class="subtitle">honeyyouyou</h2>
+        
+    </div>
+    <ul id="nav">
+        
+            <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+        
+            <li><a href="/atom.xml"><i class="fa fa-rss"></i>RSS</a></li>
+        
+        <li id="search"><a href="javascript:void(0)"><i class="fa fa-search"></i>搜索</a></li>
+    </ul>
+</header>
+
+    <div id="container">
+        
+<ul id="sidebar">
+    
+    
+<li class="widget notification">
+    <i class="fa fa-bell-o"></i>
+    <div>
+        
+<p>记录工作和生活，做些总结和反思．愿您加入讨论．从事原创，支持原创．</p>
+    </div>
+</li>
+
+    
+    
+<li class="widget widget-normal category">
+    <h3 class="fa fa-th widget-title">分类</h3>
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/learn/"><i class="fa" aria-hidden="true">learn</i></a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/learn/code/"><i class="fa" aria-hidden="true">code</i></a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/learn/code/spark/"><i class="fa" aria-hidden="true">spark</i></a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/soup/"><i class="fa" aria-hidden="true">soup</i></a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/soup/learn/"><i class="fa" aria-hidden="true">learn</i></a><span class="category-list-count">1</span></li></ul></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal archive">
+  <h3 class="fa fa-archive widget-title">归档</h3>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/"><i class="fa" aria-hidden="true">十一月 2019</i></a><span class="archive-list-count">3</span></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal popular-posts" id="popular-posts">
+    <h3 class="fa fa-thermometer-3 widget-title">热门文章</h3>
+    <ul id="popular-content">
+        <li class="load-first"><i class="fa fa-spinner fa-pulse"></i></li>
+    </ul>
+</li>
+
+    
+    
+<li class="widget widget-normal tags">
+  <h3 class="fa fa-tags widget-title">标签云</h3>
+  <div class="tagcloud-content">
+    
+      <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 0.2rem; color: #0a407c">学习</a> <a href="/tags/%E8%A7%82%E7%82%B9/" style="font-size: 0.14rem; color: #69c">观点</a> <a href="/tags/%E4%BB%A3%E7%A0%81/" style="font-size: 0.14rem; color: #69c">代码</a> <a href="/tags/Spark/" style="font-size: 0.14rem; color: #69c">Spark</a>
+  </div>
+</li>
+
+
+    
+    
+<li class="widget widget-normal friends-link">
+    <h3 class="fa fa-globe widget-title">友链</h3><br/>
+
+    
+        <a href="https://www.guokr.com/" class="fa" target="_blank">果壳科技</a>
+
+    
+        <a href="http://ocw.aca.ntu.edu.tw/ntu-ocw/" class="fa" target="_blank">台大开放式课程</a>
+
+    
+        <a href="https://www.yangzhiping.com/" class="fa" target="_blank">阳志平网志</a>
+
+    
+        <a href="https://blog.yxwang.me/" class="fa" target="_blank">AiurZellux的博客</a>
+
+    
+        <a href="http://zyan.cc/category/12/1/2/" class="fa" target="_blank">张宴的博客</a>
+
+    
+        <a href="https://frank-lam.github.io/fullstack-tutorial/#/introduction" class="fa" target="_blank">全栈工程师</a>
+
+    
+        <a href="http://geekaholiclin.github.io" class="fa" target="_blank">主题链接</a>
+
+    
+
+</li>
+
+    
+</ul>
+
+
+        <div id="main">
+    <article id="post">
+        <div id="post-header">
+
+            <h1 id="spark_aggregate_operations">
+                
+                spark_aggregate_operations
+                
+            </h1>
+            <div class="article-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>null</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            null
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2019/11/19</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="spark_aggregate_operations"
+              data-leadcloud-url="/2019/11/19/spark_aggregate_operations/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+</div>
+
+            
+            
+        </div>
+        
+        <div id="post-body">
+            <h1 id="Spark聚合操作-Spark-Aggregate-operations"><a href="#Spark聚合操作-Spark-Aggregate-operations" class="headerlink" title="Spark聚合操作 Spark Aggregate operations"></a>Spark聚合操作 Spark Aggregate operations</h1><h2 id="聚合操作简介"><a href="#聚合操作简介" class="headerlink" title="聚合操作简介"></a>聚合操作简介</h2><p>聚合操作，在sql，在编程概念中，或者说在人类思想概念中都是一个很重要的东西。<br>这个思想从哪里来的呢？应该是类推，演绎的继续。我们拆箱子，想看看每个箱子里面都多少个玩具，然后想知道每个玩具里面有多少个零件，想知道每个零件有几个齿轮轮毂，每个轮毂有多少道痕，每个痕里有几个细菌，每个细菌中有多少分子，到原子，到夸克就到了我们人类知道的最小的粒子了（不算时间，能量能虚幻之物）。然后往上，我们可以回滚。也就有了基本的聚合概念。每个屋里有多少箱子，每个城市有多少个屋，每个国家多少个城市，每个星球多少个国家，每个星系多少个星球，每个宇宙多少个星系。<br>还是回到讨论的聚合概念中来。有了刚才的类比，就比较好想聚合的概念了。在手中拥有的数据中，可以通过任意维度进行聚合，聚合后又可以查询原始数据。这就是作为的上钻和下钻的概念。<br>在sql中如何进行上下钻，切片等操作呢？</p>
 <h2 id="Spark中上卷操作"><a href="#Spark中上卷操作" class="headerlink" title="Spark中上卷操作"></a>Spark中上卷操作</h2><p>这个需要分RDD和Dataframe来讲，因为这个的存储方式不一样，所以需要分开讲。</p>
 <h3 id="Spark中RDD的上卷"><a href="#Spark中RDD的上卷" class="headerlink" title="Spark中RDD的上卷"></a>Spark中RDD的上卷</h3><p>RDD中首先将数据分为两类，list类型的map类型的。可以理解为一维和二维的数据。</p>
 <h4 id="一维数据的操作"><a href="#一维数据的操作" class="headerlink" title="一维数据的操作"></a>一维数据的操作</h4><p>RDD中一维数据的上卷操作主要有一个。</p>
@@ -88,100 +325,167 @@
 <li>参考：<a href="https://stackoverflow.com/questions/29383578/how-to-convert-rdd-object-to-dataframe-in-spark" target="_blank" rel="noopener">RDDToDataframe</a></li>
 <li>参考：<a href="https://indatalabs.com/blog/convert-spark-rdd-to-dataframe-dataset" target="_blank" rel="noopener">RDDToDFAndDataSet</a></li>
 </ul>
-]]></content>
+
+        </div>
+        <div id="post-footer">
+            <div class="avatar" >
+                <img src="/img/meihouwang.jpeg" alt="avatar"/>
+                
+                <a href="javascript:void(0)" class="high-song">high起来 &#128541;</a>
+                
+                
+                <a href="javascript:void(0)" class="donate fa">赠我一杯 &#128536;</a>
+                
+            </div>
+            <ul class="author-profile-section">
+                <li>
+                  
+                  作者:
+                  
+                    
+                    <a href="/about.html">Robin</a>
+                </li>
+                
+                <li>发表日期: <span>2019-11-19  13:44:14</span></li>
+                
+                <li>最后编辑日期: <span>2019-11-19  13:41:57</span></li>
+                
+                <li class="post-category">
+                    文章分类:
+                    
+                </li>
+                <li class="post-tags">
+                    文章标签:
+                    
+                </li>
+                
+                <li> 版权声明: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">
+知识共享署名-非商业性使用-禁止演绎 3.0 未本地化版本许可协议（CC BY-NC-ND 3.0）
+</a></li>
+                
+            </ul>
+            <div id="donate-wrap">
+                
+                
+                
+                <img src="/img/alipay.jpg" alt="支付宝付款" class="donate-img">
+                
+                
+            </div>
+        </div>
+    </article>
+    <div class="article-nav">
         
         
-    </entry>
+        <a href="/2019/11/14/spark_analysis_001/" class="next-post fa">Spark源码分析001</a>
+        
+    </div>
     
-    <entry>
-        <title><![CDATA[Spark源码分析001]]></title>
-        <url>http://honeyyouyou.com/2019/11/14/spark_analysis_001/</url>
-        <content type="html"><![CDATA[<h1 id="SparkAnalysis001"><a href="#SparkAnalysis001" class="headerlink" title="SparkAnalysis001"></a>SparkAnalysis001</h1><h2 id="系统和软件的版本"><a href="#系统和软件的版本" class="headerlink" title="系统和软件的版本"></a>系统和软件的版本</h2><h3 id="Spark的版本"><a href="#Spark的版本" class="headerlink" title="Spark的版本"></a>Spark的版本</h3><p>在Spark<a href="http://spark.apache.org/" target="_blank" rel="noopener">官网</a>中，最新的发布版本是3.0Preview(Nov 06,2019)。最新的两个Release版本是2.3.4(Sep 09,2019)和2.4.4(Sep 01,2019)。而在Spark的<a href="https://github.com/apache/spark" target="_blank" rel="noopener">Github页面</a>中，最新的分支应该是master。而最新的release应该是branch-2.4。所以直接从Spark的github中的master分支开始分析。</p>
-<h3 id="Java的版本"><a href="#Java的版本" class="headerlink" title="Java的版本"></a>Java的版本</h3><p>Java就使用oracle的jdk1.8。</p>
-<h3 id="Scala的版本"><a href="#Scala的版本" class="headerlink" title="Scala的版本"></a>Scala的版本</h3><h2 id="代码在Github的链接和分支"><a href="#代码在Github的链接和分支" class="headerlink" title="代码在Github的链接和分支"></a>代码在Github的链接和分支</h2><h3 id="代码链接"><a href="#代码链接" class="headerlink" title="代码链接"></a>代码链接</h3><h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><h2 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h2><h3 id="core"><a href="#core" class="headerlink" title="core"></a>core</h3><h3 id="common"><a href="#common" class="headerlink" title="common"></a>common</h3><h2 id="测试环境搭建"><a href="#测试环境搭建" class="headerlink" title="测试环境搭建"></a>测试环境搭建</h2><h3 id="编译方法"><a href="#编译方法" class="headerlink" title="编译方法"></a>编译方法</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+    <div id="comments">
         
-        <categories>
-            
-            <category> learn </category>
-            
-            <category> code </category>
-            
-            <category> spark </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 学习 </tag>
-            
-            <tag> 代码 </tag>
-            
-            <tag> Spark </tag>
-            
-        </tags>
-        
-    </entry>
+
+<script>
+  gitalk.render("comments");
+</script>
+
+
+
+    </div>
     
-    <entry>
-        <title><![CDATA[如何迅速的学习新东西]]></title>
-        <url>http://honeyyouyou.com/2019/11/01/how_to_learn_new_things/</url>
-        <content type="html"><![CDATA[<h1 id="如何迅速的学习新东西"><a href="#如何迅速的学习新东西" class="headerlink" title="如何迅速的学习新东西"></a>如何迅速的学习新东西</h1><h2 id="学习是什么"><a href="#学习是什么" class="headerlink" title="学习是什么"></a>学习是什么</h2><p>这是一个很大的话题，也是一个很小的话题。大到可以说学习是人和其他动物的区别，小到每天看到一则新闻都是在学习。</p>
-<h3 id="先从大处说"><a href="#先从大处说" class="headerlink" title="先从大处说"></a>先从大处说</h3><p>地球形成于约45亿年前．大约42亿年前海洋形成．大约35亿年前海洋生命出现。最早的人属约出现在230万到240万年前的非洲大陆。早期智人大约在25万到40万年前演变出来。人类能站在生物链的顶端的原因是什么呢？为什么不是恐龙称霸地球？为什么不是蚂蚁？不是蟑螂？不是鲸鱼？人类个头并不大，跑的也不快？靠的是什么呢？答案是想象能力，也可以叫八卦能力。也是今天讨论的学习能力的一种。所以说往大了说学习是人类称霸地球的重要原因，你说这个话题大否？</p>
-<h3 id="再从小处说"><a href="#再从小处说" class="headerlink" title="再从小处说"></a>再从小处说</h3><p>你看了一则新闻，说哪里地震了，正好今天考试应用到自己的作文中。这是一种学习。早上上班的路上，突然想起昨天伙伴说附近有家早餐便宜又好吃，正好还没吃东西，就去他家。这是一种学习。学习是不是一个很小的话题？</p>
-<p>维基百科给学习的定义是这样的：<strong>学习是透过外界教授或从自身经验提高能力的过程。</strong>所以学习途径有两种，一种听说而来，从外界而来。一种是自己亲身经历。老师说，不要碰火，会很烫手。有些同学听话，相信老师，就不碰了。有些调皮大胆的，非要自己试试。烫了一个包，自己亲身学到了，火确实很烫手。然后他又告诉了同学。小胆的同学听到更不敢碰了。这个过程基本涵盖了两种学习方式。第一种靠的就是想象，第二种靠的是亲身体验。</p>
-<h2 id="人为什么要学习？"><a href="#人为什么要学习？" class="headerlink" title="人为什么要学习？"></a>人为什么要学习？</h2><h3 id="学习是你安身立命之本"><a href="#学习是你安身立命之本" class="headerlink" title="学习是你安身立命之本"></a>学习是你安身立命之本</h3><p>往俗一点说，学习是你生活的资本．古人云：</p>
-<blockquote>
-<p>书中自有颜如玉，书中自有黄金屋．</p>
-</blockquote>
-<p>就是这个道理．尤其是现在的中国学习或读书是你跨越阶层最快的一条路．</p>
-<h3 id="学习是你提升人生境界的方式"><a href="#学习是你提升人生境界的方式" class="headerlink" title="学习是你提升人生境界的方式"></a>学习是你提升人生境界的方式</h3><p>三字经云：</p>
-<blockquote>
-<p>人不学，不知义；玉不琢，不成器．    </p>
-</blockquote>
-<p>人通过学习达到自我提升的目的．每个人是有自己一定境界的，有的人境界高，成仙成佛成圣人，有些人温饱足矣．学习是你提升境界的重要方式．</p>
-<h2 id="关于学习方法的几种观点"><a href="#关于学习方法的几种观点" class="headerlink" title="关于学习方法的几种观点"></a>关于学习方法的几种观点</h2><h3 id="天才派"><a href="#天才派" class="headerlink" title="天才派"></a>天才派</h3><p>有人认为：</p>
-<blockquote>
-<p>有些人天生就是神童，学什么都快．</p>
-</blockquote>
-<p>不否认人和人生来是有差距的．但成大事者很少是少年天才的，因为天才很多就伤仲永了．很多成功者都是经历了人生的磨练而没有倒下的人，这需要一种韧劲．天才不可多得，你我普通人需要的是持续的学习．</p>
-<h3 id="后天努力派"><a href="#后天努力派" class="headerlink" title="后天努力派"></a>后天努力派</h3><p>有些人，认定：</p>
-<blockquote>
-<p>人定胜天，什么都是后天可以改变的．</p>
-</blockquote>
-<p>还是请承认，人生而有差距吧．</p>
-<h3 id="方法派"><a href="#方法派" class="headerlink" title="方法派"></a>方法派</h3><p>我持一种观点，不知道是不是中庸思想的精髓：</p>
-<blockquote>
-<p>尽人事，听天命．</p>
-</blockquote>
-<p>这句话我最早在台湾大学吕世浩老师的<a href="http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/103S116" target="_blank" rel="noopener">&lt;史记&gt;</a>课程中听到的．把事情，自己认可的事情做到最好，做到极致；然后听天由命．做的过程中要讲求方法，找到最好的方法，最极致的方法．</p>
-<p>读书或者学习需要讲求方法．我们可以采用主动学习的方式，比如跟人互动，给人讲等方式．这个可以参考<a href="https://www.jianshu.com/p/2d6f749b9f0d" target="_blank" rel="noopener">学习金字塔</a> ．虽然有很多人认为这个不是真的，但之所以流传这么广，还是有它的道理在的．</p>
-<h2 id="如何迅速的学习新东西？我的观点"><a href="#如何迅速的学习新东西？我的观点" class="headerlink" title="如何迅速的学习新东西？我的观点"></a>如何迅速的学习新东西？我的观点</h2><h3 id="如何利用时间"><a href="#如何利用时间" class="headerlink" title="如何利用时间"></a>如何利用时间</h3><p>一定要有一个整片的时间学习，45分钟最好，不被打扰，全新全意．然后休息一会，然后继续．当然很多人是会被各种事情，会议等等打扰的．这个就看你自己的安排了．然后要利用好碎片时间，做好零碎化的阅读．</p>
-<h3 id="如何高效学习？"><a href="#如何高效学习？" class="headerlink" title="如何高效学习？"></a>如何高效学习？</h3><p>主动的学．比如拿到一本书，先看大纲，知道要讲什么．然后阅读重点，然后实践重点．然后尝试去写出大概，或者能找到一个人跟他讲一遍也可．</p>
-<p>读书这件事，建议可以先读一下&lt;如何阅读一本书&gt;．我的想法有点异想天开，因为毕竟不同类型的书还是需要不同的读法．</p>
-<h3 id="如何坚持并训练自己"><a href="#如何坚持并训练自己" class="headerlink" title="如何坚持并训练自己"></a>如何坚持并训练自己</h3><p>自律的人才自由，健身学习亦然．有些事情需要坚持的．</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这是一篇给自己，也是给大家的鸡汤，希望大家喝完还是能吸收到一些营养的．需要做事，主动并快，这是我从互联网中学到的．</p>
-]]></content>
+</div>
+
+
+    </div>
+    <footer id="footer">
+    
+    <div class="social">
         
-        <categories>
-            
-            <category> soup </category>
-            
-            <category> learn </category>
-            
-        </categories>
+        <a href="https://www.freecodecamp.org/" class="fa fa-free-code-camp" target="_blank" title="freecodecamp"></a>
         
+        <a href="https://github.com/robinwang7" class="fa fa-github" target="_blank" title="Follow me~"></a>
         
-        <tags>
-            
-            <tag> 学习 </tag>
-            
-            <tag> 观点 </tag>
-            
-        </tags>
+        <a href="mailto:313773543@qq.com" class="fa fa-envelope" target="_blank" title="email me~"></a>
         
-    </entry>
+    </div>
+    
+    <div>
+        
+        <a href="/" class="copyright-links">Robin</a>&copy;2015 - 2019.All Rights
+        Reserved.
+    </div>
+    <p>Powered by <a href="https://hexo.io" class="copyright-links" target="_blank">Hexo</a> 
+    </p>
     
     
+    <p>
+        <span id="busuanzi_container_site_uv" class="fa fa-bar-chart">
+        欢迎第<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>位小伙伴~
+        </span>
+    </p>
     
-</search>
+</footer>
+
+</div>
+    <ul id="tools">
+    <li class="totop-btn fa fa-angle-up"></li>
+    <li class="exchange-btn fa fa-exchange"></li>
+  
+    <li class="toc-btn fa fa-list-ul"></li>
+    
+    
+
+    
+    <li class="comment-btn fa fa-comments-o">
+        <a href="#comments" title="comments"></a>
+    </li>
+    
+</ul>
+<p id="process"></p>
+<div id="search-overlay">
+    <div class="search-area-wrap">
+        <div id="search-area">
+            <div class="input-wrap focus">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input id="search-input" autofocus autocomplete="off" type="text"
+                       placeholder="search this website..."/>
+            </div>
+            <ul id="search-result">
+                <li class="load-first"><i class="fa fa-spinner fa-pulse"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spark聚合操作-Spark-Aggregate-operations"><span class="toc-number">1.</span> <span class="toc-text">Spark聚合操作 Spark Aggregate operations</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#聚合操作简介"><span class="toc-number">1.1.</span> <span class="toc-text">聚合操作简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spark中上卷操作"><span class="toc-number">1.2.</span> <span class="toc-text">Spark中上卷操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spark中RDD的上卷"><span class="toc-number">1.2.1.</span> <span class="toc-text">Spark中RDD的上卷</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一维数据的操作"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">一维数据的操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二维数据的操作"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">二维数据的操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spark中DataFrame的上卷"><span class="toc-number">1.2.2.</span> <span class="toc-text">Spark中DataFrame的上卷</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#GroupBy"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">GroupBy</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Partition-By"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">Partition By</span></a></li></ol></li></ol></li></ol></li></ol>
+
+
+    <script src="/js/highsong.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    //theme config datas
+    var copyrightObj = {};
+    copyrightObj.enable = 'true';
+    copyrightObj.triggerCopyLength = '200';
+    copyrightObj.appendText = '商业转载请联系作者获得授权,非商业转载请注明出处 © example';
+    var leancloudObj = {};
+    leancloudObj.enable = 'true';
+    leancloudObj.className = 'blog_count';
+    leancloudObj.limits = '10';
+</script>
+<script type="text/javascript">
+    var search = {};
+    var search_path = "search.xml";
+    if (!search_path) {
+        search_path = "search.xml";
+    }
+    search.path = "/" + search_path;
+    search.func =  _ajax.init();
+</script>
+<script src="/js/app.js"></script>
+
+
+</body>
+</html>
