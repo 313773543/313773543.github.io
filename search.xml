@@ -117,7 +117,7 @@
     <entry>
         <title><![CDATA[Spark源码分析001]]></title>
         <url>http://honeyyouyou.com/2019/11/14/spark_analysis_001/</url>
-        <content type="html"><![CDATA[<h1 id="SparkAnalysis001"><a href="#SparkAnalysis001" class="headerlink" title="SparkAnalysis001"></a>SparkAnalysis001</h1><h2 id="系统和软件的版本"><a href="#系统和软件的版本" class="headerlink" title="系统和软件的版本"></a>系统和软件的版本</h2><h3 id="Spark的版本"><a href="#Spark的版本" class="headerlink" title="Spark的版本"></a>Spark的版本</h3><p>在Spark<a href="http://spark.apache.org/" target="_blank" rel="noopener">官网</a>中，最新的发布版本是3.0Preview(Nov 06,2019)。最新的两个Release版本是2.3.4(Sep 09,2019)和2.4.4(Sep 01,2019)。而在Spark的<a href="https://github.com/apache/spark" target="_blank" rel="noopener">Github页面</a>中，最新的分支应该是master。而最新的release应该是branch-2.4。所以直接从Spark的github中的master分支开始分析。</p>
+        <content type="html"><![CDATA[<h1 id="SparkAnalysis001"><a href="#SparkAnalysis001" class="headerlink" title="SparkAnalysis001"></a>SparkAnalysis001</h1><h2 id="系统和软件的版本"><a href="#系统和软件的版本" class="headerlink" title="系统和软件的版本"></a>系统和软件的版本</h2><h3 id="Spark的版本"><a href="#Spark的版本" class="headerlink" title="Spark的版本"></a>Spark的版本</h3><p>在Spark<a href="http://spark.apache.org/" target="_blank" rel="noopener">官网</a>中，最新的版本是3.0Preview(Nov 06,2019)。最新两个Release版本是2.3.4(Sep 09,2019)和2.4.4(Sep 01,2019)。在Spark的<a href="https://github.com/apache/spark" target="_blank" rel="noopener">Github页面</a>中，最新的分支应该是master。最新的release应该是branch-2.4。所以直接从Spark的github中的master分支开始分析。</p>
 <h3 id="Java的版本"><a href="#Java的版本" class="headerlink" title="Java的版本"></a>Java的版本</h3><p>Java就使用oracle的jdk1.8。</p>
 <h3 id="Scala的版本"><a href="#Scala的版本" class="headerlink" title="Scala的版本"></a>Scala的版本</h3><p>scala版本为2.12.10。</p>
 <h2 id="官网地址及代码在Github的链接和分支"><a href="#官网地址及代码在Github的链接和分支" class="headerlink" title="官网地址及代码在Github的链接和分支"></a>官网地址及代码在Github的链接和分支</h2><h3 id="官网地址"><a href="#官网地址" class="headerlink" title="官网地址"></a>官网地址</h3><p>地址<a href="http://spark.apache.org/" target="_blank" rel="noopener">链接</a></p>
@@ -133,7 +133,16 @@
 <li><p>tag-3.0.0：3.x版本的开始</p>
 </li>
 </ul>
-<h2 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h2><h3 id="core"><a href="#core" class="headerlink" title="core"></a>core</h3><h3 id="common"><a href="#common" class="headerlink" title="common"></a>common</h3><h2 id="测试环境搭建"><a href="#测试环境搭建" class="headerlink" title="测试环境搭建"></a>测试环境搭建</h2><h3 id="编译方法"><a href="#编译方法" class="headerlink" title="编译方法"></a>编译方法</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+<h2 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h2><h3 id="core"><a href="#core" class="headerlink" title="core"></a>core</h3><p>core中的代码是spark的核心代码，包括RPC通信，driver，worker，executor，rdd等逻辑都在这里。其他spark提供的模块如sql，mllib等都依赖这个模块。</p>
+<h3 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h3><p>提供类似sql查询的操作。主要使用DataFrame为载体。DataFrame可以理解为带Schema的RDD。</p>
+<h4 id="streaming"><a href="#streaming" class="headerlink" title="streaming"></a>streaming</h4><p>提供流式计算（streaming）的实时分析的操作接口。</p>
+<h4 id="mllib"><a href="#mllib" class="headerlink" title="mllib"></a>mllib</h4><p>提供机器学习（machine learning）的运算接口。</p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>还有一些common，python，project，conf，tools等目录。待后续读到的时候再做详细分析。</p>
+<h2 id="测试环境搭建"><a href="#测试环境搭建" class="headerlink" title="测试环境搭建"></a>测试环境搭建</h2><h3 id="编译方法"><a href="#编译方法" class="headerlink" title="编译方法"></a>编译方法</h3><h4 id="参考方法"><a href="#参考方法" class="headerlink" title="参考方法"></a>参考方法</h4><ul>
+<li>官网做了很详细的说明。以官宣2.4.4为例：<a href="http://spark.apache.org/docs/2.4.4/building-spark.html" target="_blank" rel="noopener">详见</a></li>
+<li>​</li>
+</ul>
+<h4 id="编译命令及参数说明"><a href="#编译命令及参数说明" class="headerlink" title="编译命令及参数说明"></a>编译命令及参数说明</h4><h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
         
         <categories>
             
