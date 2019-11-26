@@ -20,7 +20,7 @@
 <meta name="verify" content=all />
     <!--Title-->
 
-<title>标签: 学习 | 时光咖啡馆</title>
+<title>spark udaf测试 | 时光咖啡馆</title>
 
 <link rel="alternate" href="/atom.xml" title="时光咖啡馆" type="application/atom+xml">
 
@@ -29,9 +29,10 @@
 
     
 <link rel="stylesheet" href="/css/base.css">
-<link rel="stylesheet" href="/css/pages/archive.css">
+<link rel="stylesheet" href="/css/pages/post.css">
 <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
     <!--script-->
 
@@ -54,6 +55,23 @@
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+<script>
+  var admin = "wbgentleman";
+  admin = admin.split(",");
+  var gitalk = new Gitalk({
+    clientID: "4542fd0f6a578529cf33",
+    clientSecret: "09b02505b521d351a26ec490d7e2b81218774abf",
+    repo: "honeyyouyoutalk",
+    owner: "wbgentleman",
+    admin: admin,
+    id: decodeURIComponent(location.pathname),
+    distractionFreeMode: false
+  })
+
+</script>
 
     
     
@@ -177,14 +195,15 @@
 
 
         <div id="main">
-    <div id="post-list">
-        <ul class="archives-post-list">
-            
-            <li class="post-items" _href="/2019/11/26/spark_udaf_test/">
+    <article id="post">
+        <div id="post-header">
+
+            <h1 id="spark udaf测试">
                 
-                <p class="info">学习</p>
-                <h2 class="post-item-title">spark udaf测试</h2>
-                <div class="article-meta">
+                spark udaf测试
+                
+            </h1>
+            <div class="article-meta">
     
     
     <span class="categories-meta fa-wrap">
@@ -192,6 +211,15 @@
         <span>spark</span>
     </span>
     
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            学习
+            
+        </span>
+    </span>
     
     
     <span class="fa-wrap">
@@ -209,106 +237,91 @@
     
 </div>
 
-            </li>
             
-            <li class="post-items" _href="/2019/11/19/spark_aggregate_operations/">
+            
+        </div>
+        
+        <div id="post-body">
+            <h1 id="Spark-UDAF的使用"><a href="#Spark-UDAF的使用" class="headerlink" title="Spark UDAF的使用"></a>Spark UDAF的使用</h1><h2 id="啥是UDAF"><a href="#啥是UDAF" class="headerlink" title="啥是UDAF?"></a>啥是UDAF?</h2><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h2 id="测试实例"><a href="#测试实例" class="headerlink" title="测试实例"></a>测试实例</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2>
+        </div>
+        <div id="post-footer">
+            <div class="avatar" >
+                <img src="/img/meihouwang.jpeg" alt="avatar"/>
                 
-                <p class="info">学习</p>
-                <h2 class="post-item-title">Spark聚合操作</h2>
-                <div class="article-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-        <span>spark</span>
-    </span>
-    
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta ">2019/11/19</span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-            <i class="fa fa-thermometer-three-quarters"></i>
-        <span class="hits hits-meta " data-leadcloud-title="Spark聚合操作"
-              data-leadcloud-url="/2019/11/19/spark_aggregate_operations/"><i class="fa fa-spinner fa-spin"></i></span>
-    </span>
-    
-    
-</div>
-
-            </li>
-            
-            <li class="post-items" _href="/2019/11/14/spark_analysis_001/">
+                <a href="javascript:void(0)" class="high-song">high起来 &#128541;</a>
                 
-                <p class="info">学习</p>
-                <h2 class="post-item-title">Spark源码分析001</h2>
-                <div class="article-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-        <span>spark</span>
-    </span>
-    
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta ">2019/11/14</span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-            <i class="fa fa-thermometer-three-quarters"></i>
-        <span class="hits hits-meta " data-leadcloud-title="Spark源码分析001"
-              data-leadcloud-url="/2019/11/14/spark_analysis_001/"><i class="fa fa-spinner fa-spin"></i></span>
-    </span>
-    
-    
-</div>
-
-            </li>
-            
-            <li class="post-items" _href="/2019/11/01/how_to_learn_new_things/">
                 
-                <p class="info">学习</p>
-                <h2 class="post-item-title">如何迅速的学习新东西</h2>
-                <div class="article-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-        <span>learn</span>
-    </span>
-    
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta ">2019/11/01</span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-            <i class="fa fa-thermometer-three-quarters"></i>
-        <span class="hits hits-meta " data-leadcloud-title="如何迅速的学习新东西"
-              data-leadcloud-url="/2019/11/01/how_to_learn_new_things/"><i class="fa fa-spinner fa-spin"></i></span>
-    </span>
-    
-    
-</div>
-
-            </li>
-            
-        </ul>
+                <a href="javascript:void(0)" class="donate fa">赠我一杯 &#128536;</a>
+                
+            </div>
+            <ul class="author-profile-section">
+                <li>
+                  
+                  作者:
+                  
+                    
+                    <a href="/about.html">Robin</a>
+                </li>
+                
+                <li>发表日期: <span>2019-11-26  11:17:18</span></li>
+                
+                <li>最后编辑日期: <span>2019-11-26  03:20:14</span></li>
+                
+                <li class="post-category">
+                    文章分类:
+                    
+                    <a href="/categories/learn/">learn</a>
+                    
+                    <a href="/categories/learn/principle/">principle</a>
+                    
+                    <a href="/categories/learn/principle/spark/">spark</a>
+                    
+                </li>
+                <li class="post-tags">
+                    文章标签:
+                    
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+                    
+                    <a href="/tags/Spark/">Spark</a>
+                    
+                    <a href="/tags/%E4%BD%BF%E7%94%A8/">使用</a>
+                    
+                </li>
+                
+                <li> 版权声明: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">
+知识共享署名-非商业性使用-禁止演绎 3.0 未本地化版本许可协议（CC BY-NC-ND 3.0）
+</a></li>
+                
+            </ul>
+            <div id="donate-wrap">
+                
+                
+                
+                <img src="/img/alipay.jpg" alt="支付宝付款" class="donate-img">
+                
+                
+            </div>
+        </div>
+    </article>
+    <div class="article-nav">
+        
+        
+        <a href="/2019/11/19/spark_aggregate_operations/" class="next-post fa">Spark聚合操作</a>
+        
     </div>
+    
+    <div id="comments">
+        
+
+<script>
+  gitalk.render("comments");
+</script>
+
+
+
+    </div>
+    
 </div>
-
-
 
 
     </div>
@@ -346,8 +359,14 @@
     <li class="totop-btn fa fa-angle-up"></li>
     <li class="exchange-btn fa fa-exchange"></li>
   
+    <li class="toc-btn fa fa-list-ul"></li>
+    
     
 
+    
+    <li class="comment-btn fa fa-comments-o">
+        <a href="#comments" title="comments"></a>
+    </li>
     
 </ul>
 <p id="process"></p>
@@ -365,6 +384,8 @@
         </div>
     </div>
 </div>
+
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spark-UDAF的使用"><span class="toc-number">1.</span> <span class="toc-text">Spark UDAF的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#啥是UDAF"><span class="toc-number">1.1.</span> <span class="toc-text">啥是UDAF?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-number">1.2.</span> <span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试实例"><span class="toc-number">1.3.</span> <span class="toc-text">测试实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.4.</span> <span class="toc-text">参考</span></a></li></ol></li></ol>
 
 
     <script src="/js/highsong.js"></script>

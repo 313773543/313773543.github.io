@@ -3,6 +3,34 @@
     
     
     <entry>
+        <title><![CDATA[spark udaf测试]]></title>
+        <url>http://honeyyouyou.com/2019/11/26/spark_udaf_test/</url>
+        <content type="html"><![CDATA[<h1 id="Spark-UDAF的使用"><a href="#Spark-UDAF的使用" class="headerlink" title="Spark UDAF的使用"></a>Spark UDAF的使用</h1><h2 id="啥是UDAF"><a href="#啥是UDAF" class="headerlink" title="啥是UDAF?"></a>啥是UDAF?</h2><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h2 id="测试实例"><a href="#测试实例" class="headerlink" title="测试实例"></a>测试实例</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2>]]></content>
+        
+        <categories>
+            
+            <category> learn </category>
+            
+            <category> principle </category>
+            
+            <category> spark </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+            <tag> Spark </tag>
+            
+            <tag> 使用 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
         <title><![CDATA[Spark聚合操作]]></title>
         <url>http://honeyyouyou.com/2019/11/19/spark_aggregate_operations/</url>
         <content type="html"><![CDATA[<h1 id="Spark聚合操作-Spark-Aggregate-operations"><a href="#Spark聚合操作-Spark-Aggregate-operations" class="headerlink" title="Spark聚合操作 Spark Aggregate operations"></a>Spark聚合操作 Spark Aggregate operations</h1><h2 id="聚合操作简介"><a href="#聚合操作简介" class="headerlink" title="聚合操作简介"></a>聚合操作简介</h2><p>聚合操作，在sql，在编程概念中，或者说在人类思想概念中都是一个很重要的东西。<br>这个思想从哪里来的呢？应该是类推，演绎的继续。我们拆箱子，想看看每个箱子里面都多少个玩具，然后想知道每个玩具里面有多少个零件，想知道每个零件有几个齿轮轮毂，每个轮毂有多少道痕，每个痕里有几个细菌，每个细菌中有多少分子，到原子，到夸克就到了我们人类知道的最小的粒子了（不算时间，能量能虚幻之物）。然后往上，我们可以回滚。也就有了基本的聚合概念。每个屋里有多少箱子，每个城市有多少个屋，每个国家多少个城市，每个星球多少个国家，每个星系多少个星球，每个宇宙多少个星系。<br>还是回到讨论的聚合概念中来。有了刚才的类比，就比较好想聚合的概念了。在手中拥有的数据中，可以通过任意维度进行聚合，聚合后又可以查询原始数据。这就是作为的上钻和下钻的概念。<br>在sql中如何进行上下钻，切片等操作呢？</p>
@@ -142,7 +170,27 @@
 <li>官网做了很详细的说明。以官宣2.4.4为例：<a href="http://spark.apache.org/docs/2.4.4/building-spark.html" target="_blank" rel="noopener">详见</a></li>
 <li>​</li>
 </ul>
-<h4 id="编译命令及参数说明"><a href="#编译命令及参数说明" class="headerlink" title="编译命令及参数说明"></a>编译命令及参数说明</h4><h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+<h4 id="编译命令及参数说明"><a href="#编译命令及参数说明" class="headerlink" title="编译命令及参数说明"></a>编译命令及参数说明</h4><h5 id="Maven编译"><a href="#Maven编译" class="headerlink" title="Maven编译"></a>Maven编译</h5><p>需要maven3.5.4及java8，java7的支持在Spark2.2.0之后已被移除。</p>
+<ul>
+<li><p>设定内存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> MAVEN_OPTS=<span class="string">"-Xmx2g -XX:ReservedCodeCacheSize=512m"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编译命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./build/mvn -DskipTests clean package</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="构建可运行的版本"><a href="#构建可运行的版本" class="headerlink" title="构建可运行的版本"></a>构建可运行的版本</h5><ul>
+<li><p>编译命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./dev/make-distribution.sh --name custom-spark --pip --r --tgz -Psparkr -Phadoop-2.7 -Phive -Phive-thriftserver -Pmesos -Pyarn -Pkubernetes</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用帮助</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./dev/make-distribution.sh --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+</ul>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
         
         <categories>
             
